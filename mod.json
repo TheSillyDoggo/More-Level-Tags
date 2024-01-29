@@ -1,8 +1,19 @@
 {
-	"geode": "2.0.0-beta.11",
+	"geode": "2.0.0",
 	"version": "v1.0.0",
+	"gd": {
+		"win": "2.204",
+		"android": "*"
+	},
 	"id": "thesillydoggo.moretags",
-	"name": "MoreTags",
+	"name": "More Level Tags",
 	"developer": "TheSillyDoggo",
-	"description": "hello @NothingIsScarye :3"
+	"description": "hello NothingIsScary :3",
+	"dependencies": [
+        {
+            "id": "geode.node-ids",
+            "version": "v1.1.0",
+            "importance": "required"
+        }
+    ]
 }
