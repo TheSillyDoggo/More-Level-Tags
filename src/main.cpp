@@ -58,7 +58,6 @@ class $modify(LevelInfoLayer)
 		{
 			auto pl = PlayLayer::create(p0, true, true);
 			CCDirector::get()->getOpenGLView()->showCursor(true);
-			delete pl;
 
 			l->setVisible(!pl->m_levelSettings->m_propertykA32);
 
@@ -100,19 +99,26 @@ class $modify(LevelInfoLayer)
 				CCDirector::get()->getOpenGLView()->showCursor(true);
 				delete pl;
 
-				l->setVisible(!pl->m_levelSettings->m_propertykA32);
-				loading->setVisible(false);
+				if (l)
+					l->setVisible(!pl->m_levelSettings->m_propertykA32);
+				if (loading)
+					loading->setVisible(false);
 
-				if (!l->isVisible())
+				if (l)
 				{
-					l->removeFromParent();
-					buttons.erase(std::remove(buttons.begin(), buttons.end(), l), buttons.end());
+					if (!l->isVisible())
+					{
+						l->removeFromParent();
+						buttons.erase(std::remove(buttons.begin(), buttons.end(), l), buttons.end());
+					}
 				}
 			}
 			else
 			{
-				l->setVisible(false);
-				loading->setVisible(true);
+				if (l)
+					l->setVisible(false);
+				if (loading)
+					loading->setVisible(true);
 			}
 
 			for (size_t i = 0; i < buttons.size(); i++)
