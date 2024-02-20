@@ -8,6 +8,7 @@
 	"name": "More Level Tags",
 	"developer": "TheSillyDoggo",
 	"description": "hello NothingIsScary :3",
+	"repository": "https://github.com/TheSillyDoggo/More-Level-Tags",
 	"dependencies": [
         {
             "id": "geode.node-ids",
